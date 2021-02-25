@@ -1,3 +1,4 @@
+from pathlib import Path
 import os
 import django_heroku
 
@@ -94,7 +95,7 @@ USE_TZ = True
 
 
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static_files')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
