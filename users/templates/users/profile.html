@@ -1,0 +1,28 @@
+{% extends 'link/main.html' %}
+{% block main_section %}
+<div class="container">
+    <div class="form fm">
+    <h1 class="chn">Кабинет пользователя</h1>
+    <div class="control change">
+      <strong class="block">@{{ user.username }}</strong><br>
+        {% if user.email %}
+      <b>Email: </b>{{ user.email }}
+        {% endif %}
+      <br>
+      <a href = "{% url 'exit' %}"><button style="margin-top: 25px;">Выйти из кабинета</button></a>
+    </div>
+
+    <div class="sub">
+      <h1 class="ch">Изменить данные про пользователя</h1>
+      <form method="POST">
+
+        {% csrf_token %}
+        {{ updateUserForm }}
+        </div>
+
+        <button class="btn change" type="submit" style="margin-top: 25px;">Обновить данные</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

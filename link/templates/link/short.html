@@ -1,0 +1,30 @@
+{% extends 'link/main.html' %}
+
+{% block main_section %}
+
+<div class="container">
+  <div class="form fm">
+    <h1 class="lks">Создание ссылок</h1>
+    <div class="sub">
+      <form method="post" class="link_form">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button class="btn cut" type = 'submit' style=" margin-top: 20px; ">Сократить ссылку</button>
+      </form>
+    </div>
+
+      <h1 class="lks" style = "margin-top:30px; margin-bottom:40px;">Доступные ссылки</h1>
+        <div class="link" style="overflow: auto; height:150px;">
+        {% for link in Links %}
+            {% if link != NULL and link.user ==  request.user %}
+                <div class="links">
+                    Ссылка - <a href="{{ link.long_link }}">/link/{{ link.short_link }}/</a>
+                </div>
+            {% endif %}
+        {% endfor %}
+      </div>
+    </iframe>
+  </div>
+</div>
+
+{% endblock %}
