@@ -99,11 +99,15 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static_root")
 ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/pictures/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'pictures')
 
-
+LOGIN_REDIRECT_URL = 'profile'
 LOGIN_URL = 'user'
 LOGIN_REDIRECT_URL = 'home'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+django_heroku.settings(locals())
