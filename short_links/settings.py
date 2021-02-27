@@ -4,9 +4,6 @@ import django_heroku
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
-SECRET_KEY = 'or5)pr10k=%sqwd)k0l8(@g8tl#kzcu&$fn+cuvu+r(of6ib=*'
-
 DEBUG = True #False
 
 ALLOWED_HOSTS = ['site-short-links-django.herokuapp.com']
